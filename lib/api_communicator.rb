@@ -26,7 +26,7 @@ def get_character_movies_from_api(character)
   films_hash = info(character_hash, character)
 
   films_hash
-
+end
 
 
   # iterate over the character hash to find the collection of `films` for the given
@@ -38,12 +38,11 @@ def get_character_movies_from_api(character)
   # this collection will be the argument given to `parse_character_movies`
   #  and that method will do some nice presentation stuff: puts out a list
   #  of movies by title. play around with puts out other info about a given film.
-end
 
 
 def parse_character_movies(films_hash)
-  films_hash.each do |film_hash|
-    puts film_hash["title"]
+  films_hash.each_with_index do |film_hash, index|
+     puts "#{index +1} #{film_hash["title"]}"
   end
   # some iteration magic and puts out the movies in a nice list
 end
