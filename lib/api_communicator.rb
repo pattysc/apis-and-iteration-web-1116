@@ -57,22 +57,16 @@ end
 
 # def get_character_movies_from_api(character)
 #   #make the web request
-#   all_characters = RestClient.get('http://www.swapi.co/api/people/')
-#   character_hash = JSON.parse(all_characters)
-#   character_hash
-# end
+#   # all_characters = RestClient.get('http://www.swapi.co/api/people/')
+#   character_hash = JSON.parse(RestClient.get('http://www.swapi.co/api/people/'))
 #
-# def films(character)
-#   character_hash = get_character_movies_from_api(character)
-#   character_hash["results"].each do |character_array|
+#   films = []
+#   films = character_hash["results"].each do |character_array|
 #     if character_array["name"].downcase == character
-#       return character_array["films"]
+#       films = character_array["films"]
 #     end
 #   end
-# end
-# 
-# def info(character)
-#   films = films(character)
+#
 #   films.collect do |film_url|
 #     film = RestClient.get(film_url)
 #     film_info = JSON.parse(film)
